@@ -63,7 +63,8 @@ body {
     -4em 3em 0 0 var(--black);
 }
 
-.cube {
+.cube,
+label {
   width: 2vmin;
   height: 2vmin;
   font-size: 2vmin;
@@ -82,6 +83,54 @@ body {
   box-shadow:
     -1.5em -1.5em 0 0 var(--black),
     1.5em -1.5em 0 0 var(--black);
+}
+
+input {
+  opacity: 0;
+}
+
+label {
+  display: block;
+  position: absolute;
+  top: 20%;
+  cursor: pointer;
+  background: #fff;
+  box-shadow:
+    -1em -2em 0 0 var(--white),
+    -1em -1em 0 0 var(--white),
+    0em -1em 0 0 var(--white),
+    1em 0em 0 0 var(--white),
+    -1em 0em 0 0 var(--white),
+    -1em 1em 0 0 var(--white),
+    0em 1em 0 0 var(--white),
+    -1em 2em 0 0 var(--white);
+}
+
+label::after {
+  content: '';
+  display: block;
+  width: 400%;
+  height: 500%;
+  transform: translate(-1em, -2em);
+}
+
+[type=checkbox]:checked + label {
+  background: transparent;
+  box-shadow:
+    -1em -2em 0 0 var(--white),
+    -1em -1em 0 0 var(--white),
+    2em -2em 0 0 var(--white),
+    2em -1em 0 0 var(--white),
+    2em 0em 0 0 var(--white),
+    2em 1em 0 0 var(--white),
+    2em 2em 0 0 var(--white),
+    -1em 0em 0 0 var(--white),
+    -1em 1em 0 0 var(--white),
+    -1em 2em 0 0 var(--white);
+}
+
+[type=checkbox]:checked ~ .cube::after {
+  animation-play-state: paused;
 }
 
 .orange {
