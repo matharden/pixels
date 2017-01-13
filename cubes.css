@@ -16,10 +16,10 @@ body {
   background: var(--grey);
 }
 
-.p1-of-4 { left: -17em; }
-.p2-of-4 { left: -5.5em; }
-.p3-of-4 { left: 5.5em; }
-.p4-of-4 { left: 17em; }
+.cube:nth-of-type(1) { left: -17em; }
+.cube:nth-of-type(2) { left: -5.5em; }
+.cube:nth-of-type(3) { left: 5.5em; }
+.cube:nth-of-type(4) { left: 17em; }
 
 .cube::before {
   content: '';
