@@ -1,0 +1,156 @@
+:root {
+  --blue: #27bed1;
+  --black: #222;
+  --green: #9fc700;
+  --grey: #a0a0a0;
+  --orange: #f85b09;
+  --white: #fff;
+  --yellow: #fcc914;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--grey);
+}
+
+.p1-of-4 { left: -17em; }
+.p2-of-4 { left: -5.5em; }
+.p3-of-4 { left: 5.5em; }
+.p4-of-4 { left: 17em; }
+
+.cube::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow:
+    -1.5em -1.5em 0 .5em var(--white),
+    1.5em -1.5em 0 .5em var(--white),
+    -3em -4em 0 0 var(--black),
+    -2em -4em 0 0 var(--black),
+    -1em -4em 0 0 var(--black),
+    0em -4em 0 0 var(--black),
+    1em -4em 0 0 var(--black),
+    2em -4em 0 0 var(--black),
+    3em -4em 0 0 var(--black),
+    -3em 4em 0 0 var(--black),
+    -2em 4em 0 0 var(--black),
+    -1em 4em 0 0 var(--black),
+    0em 4em 0 0 var(--black),
+    1em 4em 0 0 var(--black),
+    2em 4em 0 0 var(--black),
+    3em 4em 0 0 var(--black),
+    4em -3em 0 0 var(--black),
+    4em -2em 0 0 var(--black),
+    4em -1em 0 0 var(--black),
+    4em 0em 0 0 var(--black),
+    4em 1em 0 0 var(--black),
+    4em 2em 0 0 var(--black),
+    4em 3em 0 0 var(--black),
+    -4em -3em 0 0 var(--black),
+    -4em -2em 0 0 var(--black),
+    -4em -1em 0 0 var(--black),
+    -4em 0em 0 0 var(--black),
+    -4em 1em 0 0 var(--black),
+    -4em 2em 0 0 var(--black),
+    -4em 3em 0 0 var(--black);
+}
+
+.cube {
+  width: 2vmin;
+  height: 2vmin;
+  font-size: 2vmin;
+  position: relative;
+  background: transparent;
+}
+
+.cube::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow:
+    -1.5em -1.5em 0 0 var(--black),
+    1.5em -1.5em 0 0 var(--black);
+}
+
+.orange {
+  background: var(--orange);
+  box-shadow: 0 0 0 3em var(--orange);
+}
+
+.green {
+  background-color: var(--green);
+  box-shadow: 0 0 0 3em var(--green);
+}
+
+.blue {
+  background: var(--blue);
+  box-shadow: 0 0 0 3em var(--blue);
+}
+
+.yellow {
+  background: var(--yellow);
+  box-shadow: 0 0 0 3em var(--yellow);
+}
+
+.orange::after {
+  animation:
+    blink 10s 20s infinite;
+}
+
+.green::after {
+  animation:
+    blink 10s 1.4s infinite alternate-reverse,
+    eyes-right 20s 0s infinite;
+}
+
+.blue::after {
+  animation:
+    blink-twice 10s 2s infinite reverse,
+    blink 10s 7s infinite;
+}
+
+.yellow::after {
+  animation:
+    blink-twice 10s 4.5s infinite alternate;
+}
+
+@keyframes blink {
+  5% { height: 100%; transform: translateY(0); }
+  6.5% { height: 20%; transform: translateY(.5em); }
+  8% { height: 100%; transform: translateY(0); }
+}
+
+@keyframes blink-twice {
+  23% { height: 100%; transform: translateY(0); }
+  24.5% { height: 20%; transform: translateY(.5em); }
+  26% { height: 100%; transform: translateY(0); }
+  27.5% { height: 20%; transform: translateY(.5em); }
+  29% { height: 100%; transform: translateY(0); }
+}
+
+@keyframes eyes-down-right {
+  0% { left: 0; top: 0; }
+  45% { left: 0; top: 0; }
+  50% { left: .5em; top: .5em; }
+  70% { left: .5em; top: .5em; }
+  75% { left: 0; top: 0; }
+}
+
+@keyframes eyes-right {
+  45% { left: 0; }
+  46.25% { left: .5em; }
+  55.25% { left: .5em; }
+  56.5% { left: 0; }
+}
