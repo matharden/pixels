@@ -155,7 +155,8 @@ label::after {
 
 .orange::after {
   animation:
-    blink 10s 20s infinite;
+    eyes-circle 10s 0s infinite,
+    blink 10s 7s infinite reverse;
 }
 
 .green::after {
@@ -167,11 +168,12 @@ label::after {
 .blue::after {
   animation:
     blink-twice 10s 2s infinite reverse,
-    blink 10s 7s infinite;
+    eyes-pop 10s 0s infinite;
 }
 
 .yellow::after {
   animation:
+    eyes-left 20s 3s infinite alternate,
     blink-twice 10s 4.5s infinite alternate;
 }
 
@@ -189,6 +191,17 @@ label::after {
   29% { height: 100%; transform: translateY(0); }
 }
 
+@keyframes eyes-circle {
+  45% { left: 0; top: 0; }
+  50% { left: .5em; top: .5em; }
+  60% { left: .5em; top: .5em; }
+  70% { top: -.5em; }
+  80% { left: .5em; top: -.5em; }
+  85% { left: -.5em; }
+  90% { left: -.5em; top: -.5em; }
+  95% { left: 0; top: 0; }
+}
+
 @keyframes eyes-down-right {
   0% { left: 0; top: 0; }
   45% { left: 0; top: 0; }
@@ -202,4 +215,11 @@ label::after {
   46.25% { left: .5em; }
   55.25% { left: .5em; }
   56.5% { left: 0; }
+}
+
+@keyframes eyes-left {
+  25% { left: 0; }
+  26.25% { left: -.5em; }
+  35.25% { left: -.5em; }
+  36.5% { left: 0; }
 }
